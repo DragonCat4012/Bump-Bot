@@ -1,4 +1,11 @@
 # Bump-Bot
-Discord.js Bump Bot (V12)
+Discord.js Server Bump Bot (V12) / Server Advertise Bot
 
-npm i discord.js parse-ms sequelize sqlite3
+### Installation
+```npm i discord.js parse-ms sequelize sqlite3```
+
+### Dependencies
+* discord.js
+* parse-ms
+* sequelize
+* sqlite3
