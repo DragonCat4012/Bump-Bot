@@ -9,16 +9,16 @@ const colors = {
     success: 0x13EF8D
 }
 const emotes = {
-    false: "<:false:740942401413185656>",
-    true: "<:true:740942401161527426>"
+    false: "❌",
+    true: "✔️"
 }
 const rawEmb = () => {
     return new MessageEmbed()
         .setColor(colors.info);
 }
+module.exports = { rawEmb }
 client.colors = colors
 client.emotes = emotes
-client.rawEmb = rawEmb
 const token = "TOKEN"
 
 //==================================================================================================================================================
@@ -110,21 +110,20 @@ const start = async() => {
     }
 }
 start();
-//==================================================================================================================================================
-//Ready
-//==================================================================================================================================================
+
 client.on("ready", async() => {
     console.log(" >  Logged in as: " + client.user.tag);
     client.user.setPresence({ activity: { name: "Bump your server", type: 'PLAYING' }, status: 'idle' });
 });
-//==================================================================================================================================================
+
 client.on("message", async message => {
-    //////////////////////////////////////////////////////////////////////////////////////////////////////
+    if (message.author.bot) return;
     let settings = await client.database.server_cache.getGuild(message.guild.id)
     let prefix = settings.prefix;
-    if (message.author.bot) return;
-    //////////////////////////////////////////////////////////////////////////////////////////////////////
-    //==================================================================================================================================================
+
+    if (message.mentions.users.first()) {
+        if (message.mentions.users.first().id == client.user.id) message.channel.send('My prefix is ' + settings.prefix)
+    }
     if (!message.content.startsWith(prefix)) return;
     const args = message.content.slice(prefix.length).split(/ +/);
 
@@ -134,7 +133,7 @@ client.on("message", async message => {
     );
 
     if (command.perm) {
-        if (!(message.member.hasPermission(command.perm) && !message.member.roles.cache.has(role)) && !owner.includes(message.author.id)) {
+        if (!(message.member.hasPermission(command.perm))) {
             emb.setDescription("**You are missing following permission:** `" + command.perm + "`")
             return message.channel.send(emb.setColor(colors.error));
         }
@@ -143,5 +142,4 @@ client.on("message", async message => {
         command.execute(message, args);
     } catch (error) { console.log(error) }
 });
-
 client.login(token);

@@ -1,5 +1,6 @@
 const { Message } = require('discord.js');
 const ms = require('parse-ms');
+const { rawEmb } = require('../index')
 
 module.exports = {
     name: 'bump',
@@ -17,7 +18,7 @@ module.exports = {
     async execute(msg, args) {
         const { colors, rawEmb, emotes } = msg.client;
 
-        let emb = rawEmb(msg)
+        let emb = rawEmb()
         var guild = await msg.client.database.server_cache.getGuild(msg.guild.id)
 
         if (guild.ban) {

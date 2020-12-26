@@ -1,4 +1,5 @@
 const { Message } = require('discord.js');
+const { rawEmb } = require('../index')
 
 module.exports = {
     name: 'color',
@@ -15,7 +16,7 @@ module.exports = {
      * @param {String[]} args Argumente die im Befehl mitgeliefert wurden
      */
     async execute(msg, args) {
-        const { colors, rawEmb, emotes } = msg.client;
+        const { colors, emotes } = msg.client;
         let emb = rawEmb(msg)
 
         if (args[0].startsWith('#')) {

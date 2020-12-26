@@ -1,4 +1,5 @@
 const { Message } = require('discord.js');
+const { rawEmb } = require('../index')
 
 module.exports = {
     name: 'invite',
@@ -14,13 +15,13 @@ module.exports = {
      * @param {String[]} args Argumente die im Befehl mitgeliefert wurden
      */
     async execute(msg) {
-        const { colors, rawEmb, emotes } = msg.client;
+        const { colors, emotes } = msg.client;
 
         let link = "https://discord.com/api/oauth2/authorize?client_id=" + msg.client.user.id + "&permissions=8&scope=bot",
             neko = "https://discord.gg/2AGVgNM",
             invite = "https://discord.gg/KJjZnxZ"
 
-        let emb = rawEmb(msg)
+        let emb = rawEmb()
             .setTitle("Invite Links")
             .addField("**Bot-Invite**", `[Klick](${link})`)
             .addField("**Support Server**", `[Klick](${invite})`)
