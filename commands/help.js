@@ -34,7 +34,7 @@ module.exports = {
             let A = []
             for (cmd of msg.client.commands) {
                 let command = cmd[1]
-                A.push(`**${command.name}**\n \`#${command.syntax}\`\n\n`)
+                A.push(`**${command.name}**\n \`#${command.syntax}\`\n`)
             }
             emb.setDescription(A.join(" "))
             msg.channel.send(emb.setFooter(`Type .help <command> for more || ${A.length} Commands`));
