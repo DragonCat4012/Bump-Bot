@@ -30,6 +30,6 @@ module.exports = {
         guild.color = color;
         await guild.save()
 
-        return msg.channel.send(emb.setDescription("**Changed color succesfully**").setColor(color))
+        return msg.channel.send(emb.setDescription("**Changed color succesfully**").setColor(colors.success))
     }
 };
