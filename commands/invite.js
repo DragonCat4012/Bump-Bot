@@ -18,14 +18,12 @@ module.exports = {
         const { colors, emotes } = msg.client;
 
         let link = "https://discord.com/api/oauth2/authorize?client_id=" + msg.client.user.id + "&permissions=8&scope=bot",
-            neko = "https://discord.gg/2AGVgNM",
             invite = "https://discord.gg/KJjZnxZ"
 
         let emb = rawEmb()
             .setTitle("Invite Links")
             .addField("**Bot-Invite**", `[Klick](${link})`)
             .addField("**Support Server**", `[Klick](${invite})`)
-            .addField("**Neko Dev Hood**", `[Klick](${neko})`)
         msg.channel.send(emb);
     }
 };
