@@ -10,7 +10,10 @@ const colors = {
 }
 const emotes = {
     false: "❌",
-    true: "✔️"
+    true: "✔️",
+    owner: "👑",
+    bot: '🤖',
+    user: '👤'
 }
 const rawEmb = () => {
     return new MessageEmbed()
@@ -19,7 +22,7 @@ const rawEmb = () => {
 module.exports = { rawEmb }
 client.colors = colors
 client.emotes = emotes
-const token = "TOKEN"
+const token = ""
 
 //==================================================================================================================================================
 //Loading Things
