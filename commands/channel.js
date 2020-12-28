@@ -29,6 +29,6 @@ module.exports = {
         guild.channel = channel.id;
         await guild.save()
 
-        return msg.channel.send(emb.setDescription("**Changed add Channel succesfully to:** \n <#" + text + ">").setColor(colors.success))
+        return msg.channel.send(emb.setDescription("**Changed add Channel succesfully to:** \n <#" + channel + ">").setColor(colors.success))
     }
 };
