@@ -1,4 +1,4 @@
-const { Message } = require('discord.js');
+const { Message, Guild } = require('discord.js');
 const ms = require('parse-ms');
 const { rawEmb } = require('../index')
 
@@ -16,15 +16,11 @@ module.exports = {
      * @param {String[]} args Argumente die im Befehl mitgeliefert wurden
      */
     async execute(msg, args) {
-        const { colors, rawEmb, emotes } = msg.client;
+        const { colors, emotes } = msg.client;
 
         let emb = rawEmb()
         var guild = await msg.client.database.server_cache.getGuild(msg.guild.id)
 
-        if (guild.ban) {
-            emb.setDescription("This Server is banned, You can´t bump him")
-            return msg.channel.send(emb.setColor(colors.error))
-        }
         if (guild.description == 0) {
             emb.setDescription("This Server has no description! please set one qwq")
             return msg.channel.send(emb.setColor(colors.error))
@@ -32,14 +28,9 @@ module.exports = {
 
         let bumped_time = guild.time
         let now = Date.now();
+        if (bumped_time == 0) bumped_time = now - 8.64e+7
         let cooldown = 7.2e+6;
         let time = ms(cooldown - (now - bumped_time))
-
-        if (bumped_time == 0) {
-            guild.time = now;
-            await guild.save()
-            return msg.channel.send(emb.setDescription("**Please try again, I have missed smt**"))
-        }
 
         if (guild.channel == 0) {
             guild.channel = msg.channel.id
@@ -76,30 +67,26 @@ module.exports = {
             emb.setDescription(`**Bumped succesfully**`)
                 .setColor(colors.success)
             msg.channel.send(emb)
-            bump(msg.guild.id, msg.guild.name, msg, msg.author.username)
+            bump(msg.guild.id, msg.guild.name, msg, msg.author.username, msg.client.emotes, msg.client.colors)
             console.log(msg.guild.name + "   >>>  bumped!")
         }
     }
 };
 
-async function bump(id, title, msg, user) {
+async function bump(id, title, msg, user, emotes, colors) {
     var G = await msg.client.database.server_cache.getGuild(id)
+    let invite = await msg.channel.createInvite({})
     let emb = rawEmb()
-    badges = "";
-    if (G.partner) { badges += emotes.partner } else { badges += emotes.inactivpartner }
-    if (id == 553942677117337600) { badges += emotes.staff } else { badges += emotes.inactivstaff }
 
     emb.setTitle(title)
-        .setDescription(`${badges} \n **Description:**\n ${G.description} 
+        .setDescription(` \n **Description:**\n ${G.description} 
         \n **Invite: [klick](${"https://discord.gg/" + invite.code})** 
-        \n${emotes.owner} ${msg.guild.owner.user.tag} 
         \n :globe_with_meridians: ${msg.guild.region}
         \n ${emotes.user} ${msg.guild.memberCount}
-        \n ${emotes.bot} ${msg.guild.members.cache.filter(member => member.user.bot).size}
         `)
         .setColor(G.color != 0 ? G.color : colors.info)
         .setAuthor(user + " bumped: ", msg.guild.iconURL ? msg.guild.iconURL : user.avatarURL)
-        .setFooter(`Bumped at ${(new Date()).toUTCString().substr(0, 16)}`)
+        .setTimestamp()
 
     let ch = 0;
     let channels = await msg.client.database.server_cache.getChannel()
