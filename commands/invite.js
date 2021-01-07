@@ -11,8 +11,8 @@ module.exports = {
     /**
      *@document
      * @this
-     * @param {Message} msg Nachricht in dem der Befehl geschickt wurde
-     * @param {String[]} args Argumente die im Befehl mitgeliefert wurden
+     * @param {Message} msg 
+     * @param {String[]} args 
      */
     async execute(msg) {
         const { colors, emotes } = msg.client;

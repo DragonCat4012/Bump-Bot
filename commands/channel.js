@@ -5,15 +5,15 @@ module.exports = {
     name: 'channel',
     syntax: 'channel <#channel>',
     args: true,
-    description: 'Change your server ad channel',
+    description: 'Change your server add channel',
     perm: 'ADMINISTRATOR',
     commands: ['channel', 'setchannel'],
 
     /**
      *@document
      * @this
-     * @param {Message} msg Nachricht in dem der Befehl geschickt wurde
-     * @param {String[]} args Argumente die im Befehl mitgeliefert wurden
+     * @param {Message} msg 
+     * @param {String[]} args 
      */
     async execute(msg, args) {
         const { colors, emotes } = msg.client;

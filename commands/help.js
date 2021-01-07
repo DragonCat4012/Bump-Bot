@@ -11,12 +11,13 @@ module.exports = {
     /**
      *@document
      * @this
-     * @param {Message} msg Nachricht in dem der Befehl geschickt wurde
-     * @param {String[]} args Argumente die im Befehl mitgeliefert wurden
+     * @param {Message} msg 
+     * @param {String[]} args 
      */
     async execute(msg, args) {
         const { colors, emotes } = msg.client;
         let emb = rawEmb(msg)
+            .setAuthor(msg.author.tag, msg.author.displayAvatarURL())
 
         if (args[0]) {
             var command = msg.client.commands.find(cmd => cmd.commands.includes(args[0].toLowerCase()));
@@ -34,9 +35,10 @@ module.exports = {
             let A = []
             for (cmd of msg.client.commands) {
                 let command = cmd[1]
-                A.push(`**${command.name}**\n \`#${command.syntax}\`\n`)
+                A.push(`• **${command.name}** \`#${command.syntax}\`\n ----------------------------------\n`)
             }
             emb.setDescription(A.join(" "))
+                .setTitle('My Commands')
             msg.channel.send(emb.setFooter(`Type .help <command> for more || ${A.length} Commands`));
         }
     }
