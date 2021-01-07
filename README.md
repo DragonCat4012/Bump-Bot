@@ -16,8 +16,11 @@ Discord.js Server Bump Bot (V12) / Server Advertise Bot
 
 ### ☘️ Example
 ![Help Cmd](https://cdn.discordapp.com/attachments/796828284234235935/796831590188974130/unknown.png)
+
 ![Set Your Add](https://cdn.discordapp.com/attachments/796828284234235935/796828399506292816/unknown.png)
+
 ![Check Your Add](https://cdn.discordapp.com/attachments/796828284234235935/796828471837589504/unknown.png)
+
 ![Status](https://cdn.discordapp.com/attachments/796828284234235935/796829261112541220/unknown.png)
 
 ```Logging in...                        index.js:98
