@@ -22,7 +22,7 @@ const rawEmb = () => {
 module.exports = { rawEmb }
 client.colors = colors
 client.emotes = emotes
-const token = ""
+const Bottoken = ""
 
 //==================================================================================================================================================
 //Loading Things
@@ -75,7 +75,6 @@ const initDatabase = async() => {
         //process.exit(1);
     }
 }
-
 client.database = { server_cache };
 //==================================================================================================================================================
 //Initialize the Commands
@@ -96,7 +95,7 @@ for (const file of commandFiles) {
 const start = async() => {
     try {
         console.log("Logging in...");
-        await client.login(token).catch(e => {
+        await client.login(Bottoken).catch(e => {
             switch (e.code) {
                 case 500:
                     console.log(" > ❌ Fetch Error");
@@ -145,4 +144,3 @@ client.on("message", async message => {
         command.execute(message, args);
     } catch (error) { console.log(error) }
 });
-client.login(token);
