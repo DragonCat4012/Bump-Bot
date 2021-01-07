@@ -14,6 +14,8 @@ Discord.js Server Bump Bot (V12) / Server Advertise Bot
 * sqlite3
 
 ### ☘️ Example
+![Status](https://cdn.discordapp.com/attachments/796828284234235935/796829261112541220/unknown.png)
+
 ```Logging in...                        index.js:98
  > 🗸 Server Cache                      database/dbInit.js:50
  > 🗸 Cached Database Entries           index.js:71
@@ -28,4 +30,3 @@ Discord.js Server Bump Bot (V12) / Server Advertise Bot
 
 ![Check Your Add](https://cdn.discordapp.com/attachments/796828284234235935/796828471837589504/unknown.png)
 
-![Status](https://cdn.discordapp.com/attachments/796828284234235935/796829261112541220/unknown.png)
