@@ -22,8 +22,11 @@ const rawEmb = () => {
 module.exports = { rawEmb }
 client.colors = colors
 client.emotes = emotes
-const Bottoken = ""
+const Bottoken = ''
+const supportGuildId = ''
+const supportGuildLog= ''
 
+if(!Bottoken) throw new Error('Please enter a Bot Token!')
 //==================================================================================================================================================
 //Loading Things
 //==================================================================================================================================================
@@ -113,7 +116,9 @@ const start = async() => {
 }
 start();
 
-client.on("ready", async() => {
+client.on("ready", () => {
+    if(!supportGuildId)  throw new Error('Please enter your Support-Guild-ID')
+    if(!supportGuildLog) throw new Error('Please enter your Support-Guild-Log-Channel-ID')
     console.log(" >  Logged in as: " + client.user.tag);
     client.user.setPresence({ activity: { name: "Bump your server", type: 'PLAYING' }, status: 'idle' });
 });
@@ -129,6 +134,13 @@ if(!ch) {
 }
 let emb = rawEmb().setTitle('Member Joined').setDescription(`${member} joined **${guild.name}**! Welcome you'r member No. **${guild.memberCount}**`)
 ch.send(emb).catch()
+})
+
+client.on('guildCreate', async guild =>{
+let supGuild = await client.guilds.resolve(supportGuildId)
+let channel = await supGuild.channels.resolve(supportGuildLog)
+let emb = rawEmb().setTitle('Server joined').setColor(colors.success)
+channel.send(emb).catch()
 })
 
 client.on('guildMemberRemove', async member =>{
