@@ -118,6 +118,19 @@ client.on("ready", async() => {
     client.user.setPresence({ activity: { name: "Bump your server", type: 'PLAYING' }, status: 'idle' });
 });
 
+client.on('guildMemberAdd', async member =>{
+let{guild} = member
+let settings = await client.database.server_cache.getGuild(guild.id)
+if(!settings.wlc) return
+let ch = await guild.channels.resolve(settings.wlc)
+if(!ch) {
+    settings.wlc = undefined
+    return settings.save()
+}
+let emb = rawEmb().setTitle('Member Joined').setDescription(`${member} joined **${guild.name}**! Welcome you'r member No. **${guild.memberCount}**`)
+ch.send(emb).catch()
+})
+
 client.on("message", async message => {
     if (message.author.bot) return;
     let settings = await client.database.server_cache.getGuild(message.guild.id)
