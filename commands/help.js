@@ -16,6 +16,7 @@ module.exports = {
      */
     async execute(msg, args) {
         const { colors, emotes } = msg.client;
+        const githubLink = 'https://github.com/DragonCat4012/Bump-Bot'
         let emb = rawEmb(msg)
             .setAuthor(msg.author.tag, msg.author.displayAvatarURL())
 
@@ -37,7 +38,7 @@ module.exports = {
                 let command = cmd[1]
                 A.push(`• **${command.name}** \`#${command.syntax}\`\n ----------------------------------\n`)
             }
-            emb.setDescription(A.join(" "))
+            emb.setDescription(A.join(" ") + `\n [Github](${githubLink})`)
                 .setTitle('My Commands')
             msg.channel.send(emb.setFooter(`Type .help <command> for more || ${A.length} Commands`));
         }
