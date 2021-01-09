@@ -1,6 +1,6 @@
 {
     "name": "bump-bot",
-    "version": "1.0",
+    "version": "1.0.0",
     "description": "Bump Bot",
     "main": "index.js",
     "readme": "./README.md",
