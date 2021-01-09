@@ -139,7 +139,7 @@ ch.send(emb).catch()
 client.on('guildCreate', async guild =>{
 let supGuild = await client.guilds.resolve(supportGuildId)
 let channel = await supGuild.channels.resolve(supportGuildLog)
-let emb = rawEmb().setTitle('Server joined').setColor(colors.success)
+let emb = rawEmb().setTitle('Server joined').setColor(colors.success).setDescription(guild.name)
 channel.send(emb).catch()
 })
 
