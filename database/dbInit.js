@@ -13,7 +13,7 @@ const Server = serversql.define('server_table', {
     },
     prefix: {
         type: DataTypes.TEXT,
-        defaultValue: "#"
+        defaultValue: "%"
     },
     description: {
         type: DataTypes.INTEGER,
@@ -30,6 +30,9 @@ const Server = serversql.define('server_table', {
     channel: {
         type: DataTypes.TEXT,
         defaultValue: 0
+    },
+    wlc: {
+        type: DataTypes.TEXT,
     },
 
 
