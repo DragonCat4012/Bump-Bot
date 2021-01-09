@@ -131,6 +131,19 @@ let emb = rawEmb().setTitle('Member Joined').setDescription(`${member} joined **
 ch.send(emb).catch()
 })
 
+client.on('guildMemberRemove', async member =>{
+    let{guild} = member
+    let settings = await client.database.server_cache.getGuild(guild.id)
+    if(!settings.gb) return
+    let ch = await guild.channels.resolve(settings.gb)
+if(!ch) {
+    settings.gb = undefined
+    return settings.save()
+}
+let emb = rawEmb().setTitle('Member Leaved').setDescription(`${member} leaved from **${guild.name}** Bye Bye`)
+ch.send(emb).catch()
+})
+
 client.on("message", async message => {
     if (message.author.bot) return;
     let settings = await client.database.server_cache.getGuild(message.guild.id)

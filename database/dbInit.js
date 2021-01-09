@@ -34,6 +34,9 @@ const Server = serversql.define('server_table', {
     wlc: {
         type: DataTypes.TEXT,
     },
+        gb: {
+        type: DataTypes.TEXT,
+    },
 
 
     partner: {
