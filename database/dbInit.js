@@ -10,6 +10,7 @@ const serversql = new Sequelize('server_table', 'user', 'password', {
 const Server = serversql.define('server_table', {
     key: {
         type: DataTypes.TEXT,
+        unique: true,
     },
     prefix: {
         type: DataTypes.TEXT,
@@ -34,7 +35,7 @@ const Server = serversql.define('server_table', {
     wlc: {
         type: DataTypes.TEXT,
     },
-        gb: {
+    gb: {
         type: DataTypes.TEXT,
     },
 
@@ -50,7 +51,7 @@ const Server = serversql.define('server_table', {
 });
 
 
-const syncDatabase = async() => {
+const syncDatabase = async () => {
     try {
         await serversql.sync();
         console.log(' > 🗸 Server Cache');
