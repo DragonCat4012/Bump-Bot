@@ -16,16 +16,9 @@ const emotes = {
     bot: '🤖',
     user: '👤'
 }
-const rawEmb = () => {
-    return new MessageEmbed()
-        .setColor(colors.info);
-}
-module.exports = { rawEmb }
 
-
-client.colors = colors
-client.emotes = emotes
-
+const supportGuildId = ''
+const supportGuildLog = ''
 //Specify your bot token
 var Bottoken = ''
 
@@ -41,13 +34,17 @@ try {
 }
 
 
+const rawEmb = () => {
+    return new MessageEmbed()
+        .setColor(colors.info);
+}
+module.exports = { rawEmb }
 
-const supportGuildId = ''
-const supportGuildLog = ''
+
+client.colors = colors
+client.emotes = emotes
 
 if (!Bottoken) throw new Error('Please enter a Bot Token!');
-
-
 
 //==================================================================================================================================================
 //Loading Things
