@@ -6,7 +6,7 @@ module.exports = {
     name: 'bump',
     syntax: 'bump',
     args: false,
-    description: 'Bumps your Server on our list',
+    description: 'Bumps your Server',
     commands: ['bump'],
 
     /**

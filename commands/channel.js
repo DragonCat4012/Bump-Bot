@@ -5,7 +5,7 @@ module.exports = {
     name: 'channel',
     syntax: 'channel <#channel>',
     args: true,
-    description: 'Change your server add channel',
+    description: 'Change your server advertisment channel',
     perm: 'ADMINISTRATOR',
     commands: ['channel', 'setchannel'],
 

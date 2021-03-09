@@ -5,7 +5,7 @@ module.exports = {
     name: 'invite',
     syntax: 'invite',
     args: false,
-    description: 'Get my Invite link here!',
+    description: 'Get my Invite link :3',
     commands: ['invite', 'inv', 'link', 'support', 'vote'],
 
     /**

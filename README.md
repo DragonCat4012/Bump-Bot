@@ -25,13 +25,13 @@ var Bottoken = 'SoMeToKeN'
 ## Commands
 |  Name | Beschreibung |
 | ------------- | ------------- |
-| bump | Bumps your Server on our list |
-| channel | Change your server add channel |
+| bump | Bumps your Server |
+| channel | Change your server advertisment channel |
 | color | Change your bump embed color |
 | description | Change your server description |
 | goodbye | Change your server goodbye channel |
-| help | 'Shows you all my Commands |
-| invite | et my Invite link here! |
+| help | Shows you all my Commands |
+| invite | Get my Invite link :3 |
 | prefix | Change your server prefix |
 | preview | Shows your server bump embed |
 | welcome | Change your server welcome channel |
