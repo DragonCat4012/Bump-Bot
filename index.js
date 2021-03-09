@@ -1,6 +1,7 @@
 const fs = require("fs");
+const { join } = require("path");
 const Discord = require("discord.js");
-const { Message, Collection, Client, MessageEmbed } = require("discord.js");
+const { Collection, Client, MessageEmbed } = require("discord.js");
 
 const client = new Client();
 const colors = {
@@ -20,13 +21,34 @@ const rawEmb = () => {
         .setColor(colors.info);
 }
 module.exports = { rawEmb }
+
+
 client.colors = colors
 client.emotes = emotes
-const Bottoken = ''
-const supportGuildId = ''
-const supportGuildLog= ''
 
-if(!Bottoken) throw new Error('Please enter a Bot Token!')
+//Specify your bot token
+var Bottoken = ''
+
+//Optionally load .env file
+try {
+    require('dotenv').config({
+        path: join(__dirname, '.env')
+    });
+
+    if (process.env.TOKEN) Bottoken = process.env.TOKEN;
+} catch (e) {
+    //console.error(e);
+}
+
+
+
+const supportGuildId = ''
+const supportGuildLog = ''
+
+if (!Bottoken) throw new Error('Please enter a Bot Token!');
+
+
+
 //==================================================================================================================================================
 //Loading Things
 //==================================================================================================================================================
@@ -38,7 +60,7 @@ Reflect.defineProperty(server_cache, "getGuild", {
      * @param {number} id Guild ID
      * @returns {Model} new User
      */
-    value: async function(id) {
+    value: async function (id) {
         var guild = server_cache.get(id);
         if (!guild) guild = await Server.findOne({ where: { key: id } });
         if (!guild) {
@@ -54,7 +76,7 @@ Reflect.defineProperty(server_cache, "getChannel", {
      *  @param {number} id Channel ID
      * @returns {Model} new User
      */
-    value: async function() {
+    value: async function () {
         let arr = []
         var channels = await Server.findAll();
         channels.forEach(entry => arr.push(entry.channel))
@@ -63,11 +85,11 @@ Reflect.defineProperty(server_cache, "getChannel", {
 });
 
 //Sync
-const initDatabase = async() => {
+const initDatabase = async () => {
     await syncDatabase();
 
     try {
-        for (let entr of(await Server.findAll())) {
+        for (let entr of (await Server.findAll())) {
             server_cache.set(entr.user_id, entr);
         }
 
@@ -95,16 +117,22 @@ for (const file of commandFiles) {
 //==================================================================================================================================================
 //Starting the Bot
 //==================================================================================================================================================
-const start = async() => {
+const start = async () => {
     try {
         console.log("Logging in...");
         await client.login(Bottoken).catch(e => {
+            console.log(e.code);
+
             switch (e.code) {
+                case 'TOKEN_INVALID':
+                    console.error(" > ❌ Invalid Token");
+                    break;
                 case 500:
-                    console.log(" > ❌ Fetch Error");
+                    console.error(" > ❌ Fetch Error");
                     break;
                 default:
-                    console.log(" > ❌ Unknown Error");
+                    console.error(" > ❌ Unknown Error");
+                    console.error(' > ' + e);
                     break;
             }
             setTimeout(() => { throw e }, 5000);
@@ -117,43 +145,43 @@ const start = async() => {
 start();
 
 client.on("ready", () => {
-    if(!supportGuildId)  throw new Error('Please enter your Support-Guild-ID')
-    if(!supportGuildLog) throw new Error('Please enter your Support-Guild-Log-Channel-ID')
+    if (!supportGuildId) throw new Error('Please enter your Support-Guild-ID')
+    if (!supportGuildLog) throw new Error('Please enter your Support-Guild-Log-Channel-ID')
     console.log(" >  Logged in as: " + client.user.tag);
     client.user.setPresence({ activity: { name: "Bump your server", type: 'PLAYING' }, status: 'idle' });
 });
 
-client.on('guildMemberAdd', async member =>{
-let{guild} = member
-let settings = await client.database.server_cache.getGuild(guild.id)
-if(!settings.wlc) return
-let ch = await guild.channels.resolve(settings.wlc)
-if(!ch) {
-    settings.wlc = undefined
-    return settings.save()
-}
-let emb = rawEmb().setTitle('Member Joined').setDescription(`${member} joined **${guild.name}**! Welcome you'r member No. **${guild.memberCount}**`)
-ch.send(emb).catch()
-})
-
-client.on('guildCreate', async guild =>{
-let supGuild = await client.guilds.resolve(supportGuildId)
-let channel = await supGuild.channels.resolve(supportGuildLog)
-let emb = rawEmb().setTitle('Server joined').setColor(colors.success).setDescription(guild.name)
-channel.send(emb).catch()
-})
-
-client.on('guildMemberRemove', async member =>{
-    let{guild} = member
+client.on('guildMemberAdd', async member => {
+    let { guild } = member
     let settings = await client.database.server_cache.getGuild(guild.id)
-    if(!settings.gb) return
+    if (!settings.wlc) return
+    let ch = await guild.channels.resolve(settings.wlc)
+    if (!ch) {
+        settings.wlc = undefined
+        return settings.save()
+    }
+    let emb = rawEmb().setTitle('Member Joined').setDescription(`${member} joined **${guild.name}**! Welcome you'r member No. **${guild.memberCount}**`)
+    ch.send(emb).catch()
+})
+
+client.on('guildCreate', async guild => {
+    let supGuild = await client.guilds.resolve(supportGuildId)
+    let channel = await supGuild.channels.resolve(supportGuildLog)
+    let emb = rawEmb().setTitle('Server joined').setColor(colors.success).setDescription(guild.name)
+    channel.send(emb).catch()
+})
+
+client.on('guildMemberRemove', async member => {
+    let { guild } = member
+    let settings = await client.database.server_cache.getGuild(guild.id)
+    if (!settings.gb) return
     let ch = await guild.channels.resolve(settings.gb)
-if(!ch) {
-    settings.gb = undefined
-    return settings.save()
-}
-let emb = rawEmb().setTitle('Member Leaved').setDescription(`${member} leaved from **${guild.name}** Bye Bye`)
-ch.send(emb).catch()
+    if (!ch) {
+        settings.gb = undefined
+        return settings.save()
+    }
+    let emb = rawEmb().setTitle('Member Leaved').setDescription(`${member} leaved from **${guild.name}** Bye Bye`)
+    ch.send(emb).catch()
 })
 
 client.on("message", async message => {
