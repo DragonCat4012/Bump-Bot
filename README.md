@@ -1,49 +1,60 @@
 # Bump-Bot
 **Discord.js Server Bump Bot (v12) / Server Advertise Bot**
 
-**[![widget](https://discord.com/api/guilds/553942677117337600/widget.png?style=banner2)](https://discord.gg/Emk2udJ)**
+[![widget](https://discord.com/api/guilds/553942677117337600/widget.png?style=banner2)](https://discord.gg/Emk2udJ)
 
-<br/>
+<br/><br />
 
 # ⚙️ Setup
-
 ## 🔧 Configuration
-index.js line 20:
-```JS
-const supportGuildId = ''
-const supportGuildLog = ''
-var Bottoken = ''
-```
+> **[index.js  line 20](https://github.com/DragonCat4012/Bump-Bot/blob/main/index.js#L20)**
+> ```JS
+> const supportGuildId = ''
+> const supportGuildLog = ''
+> var Bottoken = ''
+> ```
+
+<br />
 
 ## 🤖 Example Setup
-```JS
-const supportGuildId = '553942677117337600'
-const supportGuildLog = '753474865104683110'
-var Bottoken = 'SoMeToKeN'
-```
+> ```JS
+> const supportGuildId = '553942677117337600'
+> const supportGuildLog = '753474865104683110'
+> var Bottoken = 'SoMeToKeN'
+> ```
 
-## Commands
-|  Name | Beschreibung |
-| ------------- | ------------- |
-| bump | Bumps your Server |
-| channel | Change your server advertisment channel |
-| color | Change your bump embed color |
-| description | Change your server description |
-| goodbye | Change your server goodbye channel |
-| help | Shows you all my Commands |
-| invite | Get my Invite link :3 |
-| prefix | Change your server prefix |
-| preview | Shows your server bump embed |
-| welcome | Change your server welcome channel |
+<br />
 
 ## 🌿 Run
 ```node index.js```
+
+<br />
+
+## Commands
+|  Name         | Beschreibung                              |
+| ------------- | ----------------------------------------- |
+| bump          | Bumps your Server                         |
+| channel       | Change your server advertisment channel   |
+| color         | Change your bump embed color              |
+| description   | Change your server description            |
+| goodbye       | Change your server goodbye channel        |
+| help          | Shows you all my Commands                 |
+| invite        | Get my Invite link :3                     |
+| prefix        | Change your server prefix                 |
+| preview       | Shows your server bump embed              |
+| welcome       | Change your server welcome channel        |
+
+
+<br />
+<br />
 
 ## 🍂 Dependencies
 * [discord.js](https://www.npmjs.com/package/discord.js)
 * [parse-ms](https://www.npmjs.com/package/parse-ms)
 * [sequelize](https://www.npmjs.com/package/sequelize)
 * [sqlite3](https://www.npmjs.com/package/sqlite3)
+
+<br />
 
 ## ☘️ Example
 ![Activity](examples/status.png)
