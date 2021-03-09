@@ -15,12 +15,15 @@
     "author": "",
     "license": "ISC",
     "engines": {
-        "node": "12.18.3"
+        "node": "12.x.x"
     },
     "dependencies": {
         "discord.js": "^12.5.1",
         "parse-ms": "^2.1.0",
         "sequelize": "^6.3.5",
         "sqlite3": "^5.0.0"
+    },
+    "optionalDependencies": {
+        "dotenv": "^8.2.0"
     }
 }
