@@ -8,7 +8,7 @@
 # ⚙️ Setup
 
 ## 🔧 Configuration
-index.js line 20:
+[index.js  line 20:](https://github.com/DragonCat4012/Bump-Bot/blob/main/index.js#L20)
 ```JS
 const supportGuildId = ''
 const supportGuildLog = ''
@@ -22,22 +22,24 @@ const supportGuildLog = '753474865104683110'
 var Bottoken = 'SoMeToKeN'
 ```
 
-## Commands
-|  Name | Beschreibung |
-| ------------- | ------------- |
-| bump | Bumps your Server |
-| channel | Change your server advertisment channel |
-| color | Change your bump embed color |
-| description | Change your server description |
-| goodbye | Change your server goodbye channel |
-| help | Shows you all my Commands |
-| invite | Get my Invite link :3 |
-| prefix | Change your server prefix |
-| preview | Shows your server bump embed |
-| welcome | Change your server welcome channel |
-
 ## 🌿 Run
 ```node index.js```
+
+## Commands
+|  Name         | Beschreibung                              |
+| ------------- | ----------------------------------------- |
+| bump          | Bumps your Server                         |
+| channel       | Change your server advertisment channel   |
+| color         | Change your bump embed color              |
+| description   | Change your server description            |
+| goodbye       | Change your server goodbye channel        |
+| help          | Shows you all my Commands                 |
+| invite        | Get my Invite link :3                     |
+| prefix        | Change your server prefix                 |
+| preview       | Shows your server bump embed              |
+| welcome       | Change your server welcome channel        |
+
+<br />
 
 ## 🍂 Dependencies
 * [discord.js](https://www.npmjs.com/package/discord.js)
