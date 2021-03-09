@@ -67,6 +67,8 @@ Logging in...                            index.js:98
 .• ΛΚΘRΛ SΤUDΙΘS •.   >>>  bumped!
 ```
 
+<br /><br />
+
 ## 📸 Showcase
 | Bump | Setup | Preview|
 | - | - | -|
