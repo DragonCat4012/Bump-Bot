@@ -46,7 +46,7 @@ var Bottoken = 'SoMeToKeN'
 * [sqlite3](https://www.npmjs.com/package/sqlite3)
 
 ## ☘️ Example
-![Status](https://cdn.discordapp.com/attachments/796828284234235935/796829261112541220/unknown.png)
+![Activity](examples/status.png)
 
 ```json
 Logging in...                            index.js:98
@@ -57,6 +57,6 @@ Logging in...                            index.js:98
 ```
 
 ## 📸 Showcase
-|![Bump Message](https://cdn.discordapp.com/attachments/796828284234235935/796828603802714203/unknown.png)|![Set Your Add](https://cdn.discordapp.com/attachments/796828284234235935/796828399506292816/unknown.png)|
-| - | - |
-||![Check Your Add](https://cdn.discordapp.com/attachments/796828284234235935/796828471837589504/unknown.png)|
+| Bump | Setup | Preview|
+| - | - | -|
+|![Bump Message](examples/bump.png)|![Set Your Add](examples/setup.png)|![Check Your Add](examples/preview.png)|
