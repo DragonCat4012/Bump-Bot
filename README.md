@@ -70,6 +70,7 @@ Logging in...                            index.js:98
 <br /><br />
 
 ## 📸 Showcase
+Note: the default prefix is %
 | Bump | Setup | Preview|
 | - | - | -|
 |![Bump Message](examples/bump.png)|![Set Your Add](examples/setup.png)|![Check Your Add](examples/preview.png)|
