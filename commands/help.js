@@ -36,11 +36,11 @@ module.exports = {
             let A = []
             for (cmd of msg.client.commands) {
                 let command = cmd[1]
-                A.push(`• **${command.name}** \`#${command.syntax}\`\n ----------------------------------\n`)
+                A.push(`• **${command.name}** \`%${command.syntax}\`\n ----------------------------------\n`)
             }
             emb.setDescription(A.join(" ") + `\n [Github](${githubLink})`)
                 .setTitle('My Commands')
-            msg.channel.send(emb.setFooter(`Type .help <command> for more || ${A.length} Commands`));
+            msg.channel.send(emb.setFooter(`Type %help <command> for more || ${A.length} Commands`));
         }
     }
 };
