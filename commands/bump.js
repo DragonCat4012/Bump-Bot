@@ -93,7 +93,7 @@ async function bump(id, title, msg, user, emotes, colors) {
 
     for (c of channels) {
         if (c == 0) return
-        ch = msg.client.channels.resolve(c)
+        ch = await msg.client.channels.resolve(c)
         if (!c) return
         ch.send(emb).catch()
     }

@@ -10,7 +10,7 @@
 > **[index.js  line 20](https://github.com/DragonCat4012/Bump-Bot/blob/main/index.js#L20)**
 > ```JS
 > const supportGuildId = ''
-> const supportGuildLog = ''
+> const supportGuildLogChannelId = ''
 > var Bottoken = ''
 > ```
 
@@ -19,8 +19,8 @@
 ## 🤖 Example Setup
 > ```JS
 > const supportGuildId = '553942677117337600'
-> const supportGuildLog = '753474865104683110'
-> var Bottoken = 'SoMeToKeN'
+> const supportGuildLogChannelId = '753474865104683110'
+> var Bottoken = 'NzA3NTQ4MDadsfghijklmnzY5.NzA3NTQ4MDMopqrstzMjA4NzY5FSDFSDf.sdf21'
 > ```
 
 <br />

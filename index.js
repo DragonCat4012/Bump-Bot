@@ -18,7 +18,7 @@ const emotes = {
 }
 
 const supportGuildId = ''
-const supportGuildLog = ''
+const supportGuildLogChannelId = ''
 //Specify your bot token
 var Bottoken = ''
 
@@ -143,7 +143,7 @@ start();
 
 client.on("ready", () => {
     if (!supportGuildId) throw new Error('Please enter your Support-Guild-ID')
-    if (!supportGuildLog) throw new Error('Please enter your Support-Guild-Log-Channel-ID')
+    if (!supportGuildLogChannelId) throw new Error('Please enter your Support-Guild-Log-Channel-ID')
     console.log(" >  Logged in as: " + client.user.tag);
     client.user.setPresence({ activity: { name: "Bump your server", type: 'PLAYING' }, status: 'idle' });
 });
@@ -163,7 +163,7 @@ client.on('guildMemberAdd', async member => {
 
 client.on('guildCreate', async guild => {
     let supGuild = await client.guilds.resolve(supportGuildId)
-    let channel = await supGuild.channels.resolve(supportGuildLog)
+    let channel = await supGuild.channels.resolve(supportGuildLogChannelId)
     let emb = rawEmb().setTitle('Server joined').setColor(colors.success).setDescription(guild.name)
     channel.send(emb).catch()
 })
