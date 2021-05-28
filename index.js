@@ -89,7 +89,6 @@ const initDatabase = async () => {
         for (let entr of (await Server.findAll())) {
             server_cache.set(entr.user_id, entr);
         }
-
         console.log(" > 🗸 Cached Database Entries");
     } catch (e) {
         console.log(" > ❌ Error While Caching Database")
@@ -158,14 +157,14 @@ client.on('guildMemberAdd', async member => {
         return settings.save()
     }
     let emb = rawEmb().setTitle('Member Joined').setDescription(`${member} joined **${guild.name}**! Welcome you'r member No. **${guild.memberCount}**`)
-    ch.send(emb).catch()
+    ch.send(emb).catch(() => { })
 })
 
 client.on('guildCreate', async guild => {
     let supGuild = await client.guilds.resolve(supportGuildId)
     let channel = await supGuild.channels.resolve(supportGuildLogChannelId)
     let emb = rawEmb().setTitle('Server joined').setColor(colors.success).setDescription(guild.name)
-    channel.send(emb).catch()
+    channel.send(emb).catch(() => { })
 })
 
 client.on('guildMemberRemove', async member => {
@@ -178,7 +177,7 @@ client.on('guildMemberRemove', async member => {
         return settings.save()
     }
     let emb = rawEmb().setTitle('Member Leaved').setDescription(`${member} leaved from **${guild.name}** Bye Bye`)
-    ch.send(emb).catch()
+    ch.send(emb).catch(() => { })
 })
 
 client.on("message", async message => {

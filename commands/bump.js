@@ -95,6 +95,6 @@ async function bump(id, title, msg, user, emotes, colors) {
         if (c == 0) return
         ch = await msg.client.channels.resolve(c)
         if (!c) return
-        ch.send(emb).catch()
+        ch.send(emb).catch(() => { })
     }
 }
