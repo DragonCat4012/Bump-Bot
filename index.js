@@ -181,6 +181,7 @@ client.on('guildMemberRemove', async member => {
 })
 
 client.on("message", async message => {
+    let emb = rawEmb()
     if (message.author.bot) return;
     let settings = await client.database.server_cache.getGuild(message.guild.id)
     let prefix = settings.prefix;
@@ -195,6 +196,11 @@ client.on("message", async message => {
     const command = client.commands.find(cmd =>
         cmd.commands.includes(commandName)
     );
+
+    if (!command) {
+        emb.setDescription(`**I don´t know this command. Use ${prefix}help to see my commands** `)
+        return message.channel.send(emb.setColor(colors.error));
+    }
 
     if (command.perm) {
         if (!(message.member.hasPermission(command.perm))) {
