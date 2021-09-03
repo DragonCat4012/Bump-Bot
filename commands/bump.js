@@ -26,6 +26,9 @@ module.exports = {
             return msg.channel.send(emb.setColor(colors.error))
         }
 
+        const gChannel = await msg.guild.channels.cache.get(guild.channel)
+        if (guild.channel == 0 || !gChannel) return msg.channel.send(emb.setDescription('Please set a valid channel before you bump your server :3').setColor(colors.error))
+
         let bumped_time = guild.time
         let now = Date.now();
         if (bumped_time == 0) bumped_time = now - 8.64e+7
@@ -62,13 +65,16 @@ module.exports = {
                 .setTitle("You have to wait ;-;")
             return msg.channel.send(emb)
         } else {
-            guild.time = now;
+            //   guild.time = now;
+
             await guild.save()
             emb.setDescription(`**Bumped succesfully**`)
                 .setColor(colors.success)
             msg.channel.send(emb)
             bump(msg.guild.id, msg.guild.name, msg, msg.author.username, msg.client.emotes, msg.client.colors)
             console.log(msg.guild.name + "   >>>  bumped!")
+            var channel = await msg.client.guilds.cache.get(msg.client.supportGuildId).channels.cache.get(msg.client.supportGuildLogChannelId)
+            channel.send(emb.setDescription(msg.author.tag + ' bumped ' + msg.guild.name))
         }
     }
 };

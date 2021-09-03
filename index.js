@@ -17,10 +17,10 @@ const emotes = {
     user: '👤'
 }
 
-const supportGuildId = ''
-const supportGuildLogChannelId = ''
+const supportGuildId = '553942677117337600'
+const supportGuildLogChannelId = '753470754213068930'
 //Specify your bot token
-var Bottoken = ''
+var Bottoken = 'NzA3NTQ4MDMxOTIyMjA4NzY5.XrKZdA.2yxI39malTME2GuLE3uVZgeCVIw'
 
 //Optionally load .env file
 try {
@@ -43,6 +43,8 @@ module.exports = { rawEmb }
 
 client.colors = colors
 client.emotes = emotes
+client.supportGuildId = supportGuildId
+client.supportGuildLogChannelId = supportGuildLogChannelId
 
 if (!Bottoken) throw new Error('Please enter a Bot Token!');
 
@@ -209,6 +211,7 @@ client.on("message", async message => {
         }
     }
     try {
+        message.client = client
         command.execute(message, args);
     } catch (error) { console.log(error) }
 });
