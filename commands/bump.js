@@ -65,13 +65,12 @@ module.exports = {
                 .setTitle("You have to wait ;-;")
             return msg.channel.send(emb)
         } else {
-            //   guild.time = now;
-
+            guild.time = now;
             await guild.save()
-            emb.setDescription(`**Bumped succesfully**`)
+            const count = await bump(msg.guild.id, msg.guild.name, msg, msg.author.username, msg.client.emotes, msg.client.colors)
+            emb.setDescription(`**Bumped succesfully to ${count} Server**`)
                 .setColor(colors.success)
             msg.channel.send(emb)
-            bump(msg.guild.id, msg.guild.name, msg, msg.author.username, msg.client.emotes, msg.client.colors)
             console.log(msg.guild.name + "   >>>  bumped!")
             var channel = await msg.client.guilds.cache.get(msg.client.supportGuildId).channels.cache.get(msg.client.supportGuildLogChannelId)
             channel.send(emb.setDescription(msg.author.tag + ' bumped ' + msg.guild.name))
@@ -96,11 +95,14 @@ async function bump(id, title, msg, user, emotes, colors) {
 
     let ch = 0;
     let channels = await msg.client.database.server_cache.getChannel()
+    var i = 0
 
     for (c of channels) {
         if (c == 0) return
         ch = await msg.client.channels.resolve(c)
         if (!c) return
+        i++
         ch.send(emb).catch(() => { })
     }
+    return i - 1
 }
