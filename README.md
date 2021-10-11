@@ -27,6 +27,7 @@
 
 ## 🌿 Run
 ```node index.js```
+(remember to install all needed dependecies ;3 Use ```npm i``` to install them )
 
 <br />
 
