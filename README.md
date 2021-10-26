@@ -1,9 +1,9 @@
 # Bump-Bot
 **Discord.js Server Bump Bot (v12) / Server Advertise Bot**
 
-[![widget](https://discord.com/api/guilds/553942677117337600/widget.png?style=banner2)](https://discord.gg/Emk2udJ)
+<br/>
 
-<br/><br />
+[![widget](https://discord.com/api/guilds/553942677117337600/widget.png?style=banner2)](https://discord.gg/Emk2udJ)
 
 # ⚙️ Setup
 ## 🔧 Configuration
