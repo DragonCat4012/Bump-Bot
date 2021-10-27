@@ -20,18 +20,9 @@ const emotes = {
 const supportGuildId = ''
 const supportGuildLogChannelId = ''
 //Specify your bot token
-var Bottoken = ''
-
-//Optionally load .env file
-try {
-    require('dotenv').config({
-        path: join(__dirname, '.env')
-    });
-
-    if (process.env.TOKEN) Bottoken = process.env.TOKEN;
-} catch (e) {
-    //console.error(e);
-}
+const Bottoken = ''
+// Insert here your userid if you wnat to use the status command
+const ownerID = ""
 
 
 const rawEmb = () => {
@@ -40,7 +31,7 @@ const rawEmb = () => {
 }
 module.exports = { rawEmb }
 
-
+client.ownerID = ownerID
 client.colors = colors
 client.emotes = emotes
 client.supportGuildId = supportGuildId

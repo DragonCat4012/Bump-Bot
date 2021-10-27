@@ -11,7 +11,8 @@
 > ```JS
 > const supportGuildId = ''
 > const supportGuildLogChannelId = ''
-> var Bottoken = ''
+> const Bottoken = ''
+> const ownerID = ''
 > ```
 
 <br />
@@ -20,7 +21,8 @@
 > ```JS
 > const supportGuildId = '553942677117337600'
 > const supportGuildLogChannelId = '753474865104683110'
-> var Bottoken = 'NzA3NTQ4MDadsfghijklmnzY5.NzA3NTQ4MDMopqrstzMjA4NzY5FSDFSDf.sdf21'
+> const Bottoken = 'NzA3NTQ4MDadsfghijklmnzY5.NzA3NTQ4MDMopqrstzMjA4NzY5FSDFSDf.sdf21'
+> const ownerID = "586905336850677760"
 > ```
 
 <br />
@@ -43,6 +45,7 @@
 | prefix        | Change your server prefix                 |
 | preview       | Shows your server bump embed              |
 | welcome       | Change your server welcome channel        |
+| status        | 'Change the bots status        |
 
 
 <br />
