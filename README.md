@@ -60,3 +60,8 @@ Note: the default prefix is %. You can change this in the [dbInit File](https://
 | Bump | Setup | Preview|
 | - | - | -|
 |![Bump Message](examples/bump.png)|![Set Your Add](examples/setup.png)|![Check Your Add](examples/preview.png)|
+
+# 📋 Contributions 
+<a href="https://github.com/DragonCat4012/chia/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=DragonCat4012/Bump-Bot" />
+</a>
