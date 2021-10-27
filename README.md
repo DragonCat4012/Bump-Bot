@@ -1,8 +1,6 @@
 # Bump-Bot
 **Discord.js Server Bump Bot (v12) / Server Advertise Bot**
 
-<br/>
-
 [![widget](https://discord.com/api/guilds/553942677117337600/widget.png?style=banner2)](https://discord.gg/Emk2udJ)
 
 # ⚙️ Setup
@@ -14,8 +12,6 @@
 > var Bottoken = ''
 > ```
 
-<br />
-
 ## 🤖 Example Setup
 > ```JS
 > const supportGuildId = '553942677117337600'
@@ -23,15 +19,11 @@
 > var Bottoken = 'NzA3NTQ4MDadsfghijklmnzY5.NzA3NTQ4MDMopqrstzMjA4NzY5FSDFSDf.sdf21'
 > ```
 
-<br />
-
 ## 🌿 Run
 ```node index.js```
 (remember to install all needed dependecies ;3 Use ```npm i``` to install them )
 
-<br />
-
-# Commands
+# 🔧 Commands
 |  Name         | Beschreibung                              |
 | ------------- | ----------------------------------------- |
 | bump          | Bumps your Server                         |
@@ -45,17 +37,12 @@
 | preview       | Shows your server bump embed              |
 | welcome       | Change your server welcome channel        |
 
-
-<br />
-<br />
-
 ## 🍂 Dependencies
 * [discord.js](https://www.npmjs.com/package/discord.js)
 * [parse-ms](https://www.npmjs.com/package/parse-ms)
 * [sequelize](https://www.npmjs.com/package/sequelize)
 * [sqlite3](https://www.npmjs.com/package/sqlite3)
 
-<br />
 
 ## ☘️ Example
 ![Activity](examples/status.png)
@@ -67,8 +54,6 @@ Logging in...                            index.js:98
  >  Logged in as: Tenshi#3639            index.js:118
 .• ΛΚΘRΛ SΤUDΙΘS •.   >>>  bumped!
 ```
-
-<br /><br />
 
 # 📸 Showcase
 Note: the default prefix is %. You can change this in the [dbInit File](https://github.com/DragonCat4012/Bump-Bot/blob/main/database/dbInit.js)
