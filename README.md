@@ -3,8 +3,6 @@
 
 [![widget](https://discord.com/api/guilds/553942677117337600/widget.png?style=banner2)](https://discord.gg/Emk2udJ)
 
-<br/><br />
-
 # ⚙️ Setup
 ## 🔧 Configuration
 > **[index.js  line 20](https://github.com/DragonCat4012/Bump-Bot/blob/main/index.js#L20)**
@@ -15,8 +13,6 @@
 > const ownerID = ''
 > ```
 
-<br />
-
 ## 🤖 Example Setup
 > ```JS
 > const supportGuildId = '553942677117337600'
@@ -25,14 +21,11 @@
 > const ownerID = "586905336850677760"
 > ```
 
-<br />
-
 ## 🌿 Run
 ```node index.js```
+(remember to install all needed dependecies ;3 Use ```npm i``` to install them )
 
-<br />
-
-## Commands
+# 🔧 Commands
 |  Name         | Beschreibung                              |
 | ------------- | ----------------------------------------- |
 | bump          | Bumps your Server                         |
@@ -47,22 +40,17 @@
 | welcome       | Change your server welcome channel        |
 | status        | 'Change the bots status        |
 
-
-<br />
-<br />
-
 ## 🍂 Dependencies
 * [discord.js](https://www.npmjs.com/package/discord.js)
 * [parse-ms](https://www.npmjs.com/package/parse-ms)
 * [sequelize](https://www.npmjs.com/package/sequelize)
 * [sqlite3](https://www.npmjs.com/package/sqlite3)
 
-<br />
 
 ## ☘️ Example
 ![Activity](examples/status.png)
 
-```json
+```
 Logging in...                            index.js:98
  > 🗸 Server Cache                        database/dbInit.js:50
  > 🗸 Cached Database Entries             index.js:71
@@ -70,10 +58,13 @@ Logging in...                            index.js:98
 .• ΛΚΘRΛ SΤUDΙΘS •.   >>>  bumped!
 ```
 
-<br /><br />
-
-## 📸 Showcase
-Note: the default prefix is %
+# 📸 Showcase
+Note: the default prefix is %. You can change this in the [dbInit File](https://github.com/DragonCat4012/Bump-Bot/blob/main/database/dbInit.js)
 | Bump | Setup | Preview|
 | - | - | -|
 |![Bump Message](examples/bump.png)|![Set Your Add](examples/setup.png)|![Check Your Add](examples/preview.png)|
+
+# 📋 Contributions 
+<a href="https://github.com/DragonCat4012/chia/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=DragonCat4012/Bump-Bot" />
+</a>
