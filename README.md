@@ -60,7 +60,7 @@
 ## ☘️ Example
 ![Activity](examples/status.png)
 
-```json
+```
 Logging in...                            index.js:98
  > 🗸 Server Cache                        database/dbInit.js:50
  > 🗸 Cached Database Entries             index.js:71
@@ -71,7 +71,7 @@ Logging in...                            index.js:98
 <br /><br />
 
 ## 📸 Showcase
-Note: the default prefix is %
+Note: the default prefix is %. You can change this in the [dbInit File](https://github.com/DragonCat4012/Bump-Bot/blob/main/database/dbInit.js)
 | Bump | Setup | Preview|
 | - | - | -|
 |![Bump Message](examples/bump.png)|![Set Your Add](examples/setup.png)|![Check Your Add](examples/preview.png)|
