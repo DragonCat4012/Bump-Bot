@@ -31,7 +31,7 @@
 
 <br />
 
-## Commands
+# Commands
 |  Name         | Beschreibung                              |
 | ------------- | ----------------------------------------- |
 | bump          | Bumps your Server                         |
@@ -70,7 +70,7 @@ Logging in...                            index.js:98
 
 <br /><br />
 
-## 📸 Showcase
+# 📸 Showcase
 Note: the default prefix is %. You can change this in the [dbInit File](https://github.com/DragonCat4012/Bump-Bot/blob/main/database/dbInit.js)
 | Bump | Setup | Preview|
 | - | - | -|
