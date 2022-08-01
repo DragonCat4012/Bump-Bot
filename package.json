@@ -18,7 +18,7 @@
         "node": "12.x.x"
     },
     "dependencies": {
-        "discord.js": "^12.5.1",
+        "discord.js": "^14.0.0",
         "parse-ms": "^2.1.0",
         "sequelize": "^6.3.5",
         "sqlite3": "^5.0.0"
