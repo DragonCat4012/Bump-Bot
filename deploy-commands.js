@@ -29,4 +29,4 @@ rest.put(Routes.applicationGuildCommands(clientId, guildId), {
     .catch(console.error);
 }
 
- module.exports = {syncCommands}
+module.exports = {syncCommands}
