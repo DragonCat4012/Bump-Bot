@@ -38,7 +38,7 @@
 | prefix        | Change your server prefix                 |
 | preview       | Shows your server bump embed              |
 | welcome       | Change your server welcome channel        |
-| status        | 'Change the bots status        |
+| status        | Change the bots status        |
 
 ## 🍂 Dependencies
 * [discord.js](https://www.npmjs.com/package/discord.js)
