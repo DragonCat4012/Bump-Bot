@@ -1,25 +1,37 @@
-# Bump-Bot
-**Discord.js Server Bump Bot (v12) / Server Advertise Bot**
+# Bump-Bot V14.3
+**Discord.js Server Bump Bot (v14) / Server Advertise Bot**
 
 [![widget](https://discord.com/api/guilds/553942677117337600/widget.png?style=banner2)](https://discord.gg/Emk2udJ)
 
 # ⚙️ Setup
 ## 🔧 Configuration
-> **[index.js  line 20](https://github.com/DragonCat4012/Bump-Bot/blob/main/index.js#L20)**
-> ```JS
-> const supportGuildId = ''
-> const supportGuildLogChannelId = ''
-> const Bottoken = ''
-> const ownerID = ''
-> ```
+**[config.json](https://github.com/DragonCat4012/Bump-Bot/blob/main/config.json)**
+ ```JSON
+ {
+    "token": "your bot token",
+    "clientId": "your bots applicationid/userid",
+    "guildId": "you guild id",
+    "supportGuildLogChannelId": "your guilds log channel id",
+    "ownerId": "your user id"
+}
+ ```
 
 ## 🤖 Example Setup
 > ```JS
 > const supportGuildId = '553942677117337600'
 > const supportGuildLogChannelId = '753474865104683110'
-> const Bottoken = 'NzA3NTQ4MDadsfghijklmnzY5.NzA3NTQ4MDMopqrstzMjA4NzY5FSDFSDf.sdf21'
+> const token = 'NzA3NTQ4MDadsfghijklmnzY5.NzA3NTQ4MDMopqrstzMjA4NzY5FSDFSDf.sdf21'
 > const ownerID = "586905336850677760"
 > ```
+ ```JSON
+ {
+    "token": "NzA3NTQ4MDadsfghijklmnzY5.NzA3NTQ4MDMopqrstzMjA4NzY5FSDFSDf.sdf21",
+    "clientId": "586905336850677760",
+    "guildId": "553942677117337600",
+    "supportGuildLogChannelId": "753474865104683110",
+    "ownerId": "586905336850677760"
+}
+ ```
 
 ## 🌿 Run
 ```node index.js```
